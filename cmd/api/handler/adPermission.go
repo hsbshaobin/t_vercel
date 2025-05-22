@@ -10,7 +10,7 @@ import (
 func GenerateCode(context *gin.Context) {
 	var bo model.GeneralCodeBO
 	if err := context.ShouldBindJSON(&bo); err != nil {
-		context.JSON(http.StatusOK, model.Failed(http.StatusBadRequest, "参数绑定异常", nil))
+		context.JSON(http.StatusOK, model.Failed(http.StatusBadRequest, "参数绑定异常", err.Error()))
 		return
 	}
 	context.JSON(http.StatusOK, service.GenerateCode(context, bo))
@@ -19,7 +19,7 @@ func GenerateCode(context *gin.Context) {
 func CheckCode(context *gin.Context) {
 	var bo model.CheckCodeBO
 	if err := context.ShouldBindJSON(&bo); err != nil {
-		context.JSON(http.StatusOK, model.Failed(http.StatusBadRequest, "参数绑定异常", nil))
+		context.JSON(http.StatusOK, model.Failed(http.StatusBadRequest, "参数绑定异常", err.Error()))
 		return
 	}
 	context.JSON(http.StatusOK, service.CheckCode(context, bo))

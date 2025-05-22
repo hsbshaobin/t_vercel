@@ -21,7 +21,7 @@ func InitRouter(debug bool) *gin.Engine {
 
 	server := api.Group("/check")
 	{
-		//server.POST("/generateCode", handler.GenerateCode)
+		server.POST("/generateCode", handler.GenerateCode)
 		server.POST("/checkCode", handler.CheckCode)
 
 	}
