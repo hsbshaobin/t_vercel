@@ -14,4 +14,6 @@ create table ac_invite_code(
     primary key(ac_invite_code_id)
 ) ENGINE = INNODB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COMMENT '邀请码表';
 
-
+-- insert into ac_invite_code(app_id,invite_code)
+-- values
+-- (),
