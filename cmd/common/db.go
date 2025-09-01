@@ -13,7 +13,7 @@ var once sync.Once
 
 // initMysql 初始化 MySQL 数据库连接
 func initMysql() error {
-	dsn := "root:xianxiao@tcp(192.168.1.100:3306)/ad_check?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:xianxiao@tcp(192.168.5.100:3306)/ad_check?charset=utf8mb4&parseTime=True&loc=Local"
 	//dsn := "xiaojing:asdf*UH3oj@tcp(mysqla002e904e7a3.rds.ivolces.com)/ad_check?charset=utf8mb4&parseTime=True&loc=Local"
 	var err error
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
