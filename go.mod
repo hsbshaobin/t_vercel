@@ -1,4 +1,4 @@
-module adCheck
+module base_go_web
 
 go 1.23.3
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"adCheck/cmd/api/config"
+	"base_go_web/cmd/api/config"
 	"fmt"
 	"golang.org/x/net/http2"
 	"net/http"

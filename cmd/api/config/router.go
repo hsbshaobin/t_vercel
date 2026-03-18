@@ -1,7 +1,7 @@
 package config
 
 import (
-	"adCheck/cmd/api/handler"
+	"base_go_web/cmd/api/handler"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -17,12 +17,11 @@ func InitRouter(debug bool) *gin.Engine {
 	})
 	gin.SetMode(gin.ReleaseMode)
 
-	api := r.Group("/ac")
+	api := r.Group("/content")
 
-	server := api.Group("/check")
+	server := api.Group("/group1")
 	{
-		server.POST("/generateCode", handler.GenerateCode)
-		server.POST("/checkCode", handler.CheckCode)
+		server.GET("/test", handler.Test)
 
 	}
 
