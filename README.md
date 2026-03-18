@@ -1,3 +1,3 @@
-# RedemptionCodeServer
+# Base Go Web
 
-兑换码后端
+go web项目基础模板
