@@ -1,5 +1,5 @@
 // api/vercel.go
-package main
+package handler
 
 import (
 	"base_go_web/cmd/api/config"
