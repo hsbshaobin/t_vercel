@@ -14,6 +14,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	// 获取你原有 Gin 引擎（二选一）
 	ginEngine := config.GetVercelGinEngine() // 方案A
 	// ginEngine := api.GetGinEngine() // 方案B
+	if mappedPath := r.URL.Query().Get("__path"); mappedPath != "" {
+		r.URL.Path = mappedPath
+	}
 	if strings.HasPrefix(r.URL.Path, "/api/vercel") {
 		newPath := strings.TrimPrefix(r.URL.Path, "/api/vercel")
 		if newPath == "" {

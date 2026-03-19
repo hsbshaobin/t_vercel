@@ -5,10 +5,22 @@
       "use": "@vercel/go"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/content/:path*",
-      "destination": "/api/vercel/content/:path*"
+      "src": "/content/(.*)",
+      "dest": "/api/vercel.go?__path=/content/$1"
+    },
+    {
+      "src": "/content",
+      "dest": "/api/vercel.go?__path=/content"
+    },
+    {
+      "src": "/api/vercel/(.*)",
+      "dest": "/api/vercel.go?__path=/$1"
+    },
+    {
+      "src": "/api/vercel",
+      "dest": "/api/vercel.go?__path=/"
     }
   ]
 }
