@@ -1,14 +1,14 @@
 {
-  "version": 2,
-  "functions": {
-    "api/vercel.go": {
-      "runtime": "go1.x"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/vercel/$1"
+      "src": "api/vercel.go",
+      "use": "@vercel/go"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/vercel/$1"
     }
   ]
 }
